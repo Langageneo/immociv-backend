@@ -1,3 +1,4 @@
+cat > config/cloudinary.js << 'EOF'
 "use strict";
 
 const cloudinary            = require("cloudinary").v2;
@@ -12,11 +13,11 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  params: {
+  params: async (req, file) => ({
     folder:          "immociv",
     allowed_formats: ["jpg", "jpeg", "png", "webp"],
-    transformation:  [{ width: 1200, quality: "auto", fetch_format: "auto" }],
-  },
+    transformation:  [{ width: 1200, quality: "auto" }],
+  }),
 });
 
 const upload = multer({
@@ -25,3 +26,4 @@ const upload = multer({
 });
 
 module.exports = { cloudinary, upload };
+EOF
