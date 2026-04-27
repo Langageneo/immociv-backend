@@ -1,3 +1,4 @@
+cat > package.json << 'EOF'
 {
   "name": "immociv-backend",
   "version": "2.0.0",
@@ -8,11 +9,11 @@
     "dev": "nodemon server.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cloudinary": "^2.2.0",
+    "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -25,3 +26,4 @@
     "nodemon": "^3.1.0"
   }
 }
+EOF
