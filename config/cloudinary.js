@@ -1,4 +1,3 @@
-cat > config/cloudinary.js << 'EOF'
 "use strict";
 
 const cloudinary            = require("cloudinary").v2;
@@ -26,4 +25,3 @@ const upload = multer({
 });
 
 module.exports = { cloudinary, upload };
-EOF
