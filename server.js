@@ -13,7 +13,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin: ["https://immociv-frontend.vercel.app", "http://localhost:3000"],
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
